@@ -1,7 +1,18 @@
-câu 15:
-select concat(nhanvien.honv,' ',nhanvien.tennv) as hovaten from phongban join nhanvien on phongban.trphg = nhanvien.manv;
+﻿câu 15:
+	select concat(nhanvien.honv,' ',nhanvien.tennv) as hovaten from phongban join nhanvien on phongban.trphg = nhanvien.manv;
 câu 16:
-select nhanvien.tennv,nhanvien.dchi from nhanvien join phongban on nhanvien.maphg = phongban.maphg where tenphg = 'nguyen cuu';
+	select nhanvien.tennv,nhanvien.dchi from nhanvien join phongban on nhanvien.maphg = phongban.maphg where tenphg = 'nguyen cuu';
 câu 17:
- select dean.tenda , phongban.tenphg , concat(nhanvien.honv,nhanvien.tennv) as HoTen , phongban.ngnhanchuc from nhanvien join phongban on nhanvien.manv = phongban.trphg join dean on phongban.maphg = dean.phong where dean.diadiem_da = 'tp.hcm';
+	select dean.tenda , phongban.tenphg , concat(nhanvien.honv,nhanvien.tennv) as HoTen , phongban.ngnhanchuc from nhanvien join phongban on nhanvien.manv = phongban.trphg join dean on phongban.maphg = dean.phong where dean.diadiem_da = 'tp.hcm';
+Câu 18:
+	SELECT concat(honv,' ',tennv) as hoten, ngsinh, concat(hotn, tentn) as hotentn FROM nhanvien JOIN thannhan on nhanvien.manv=thannhan.manvien WHERE nhanvien.phai='f'
+Câu 19:
+	SELECT concat(n1.honv, n1.tennv) as hoten, concat(n2.honv, n2.tennv) as hotennql FROM nhanvien n1 join nhanvien as n2 on n1.manql=n2.manv
+Câu 20:
+	SELECT CONCAT(n1.honv, n1.tennv) AS hoten, CONCAT(n2.honv, n2.tennv) AS hotennql, CONCAT(n3.honv, n3.tennv) AS hotentrphg FROM `nhanvien` n1 JOIN nhanvien n2 ON n1.manql = n2.manv JOIN phongban ON phongban.maphg = n1.maphg JOIN nhanvien n3 ON n3.manv = phongban.trphg
+Câu 21:
+	SELECT n1.tennv FROM nhanvien n1 JOIN phongban ON n1.maphg = phongban.maphg JOIN dean ON phongban.maphg = dean.phong JOIN nhanvien n2 ON n2.manql = n1.manql WHERE dean.tenda = 'tiep thi' AND CONCAT(n2.honv, ' ', n2.tennv) = 'tran thanh ngan' AND phongban.maphg = '4'
 câu 22:
+	SELECT dean.tenda FROM nhanvien JOIN phancong on nhanvien.manv = phancong.manv join dean on dean.mada = phancong.soda WHERE concat(nhanvien.honv,' ',nhanvien.tennv) = 'dinh van trong'
+câu 23: 
+	SELECT * FROM nhanvien JOIN phongban ON nhanvien.maphg = phongban.maphg WHERE NOT (phongban.tenphg = 'quan ly')
