@@ -1,0 +1,4 @@
+câu 15:
+select concat(nhanvien.honv,' ',nhanvien.tennv) as hovaten from phongban join nhanvien on phongban.trphg = nhanvien.manv;
+câu 16:
+select nhanvien.tennv,nhanvien.dchi from nhanvien join phongban on nhanvien.maphg = (select maphg from phongban where tenphg = 'nguyen cuu');
