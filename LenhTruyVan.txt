@@ -1,4 +1,6 @@
 câu 15:
 select concat(nhanvien.honv,' ',nhanvien.tennv) as hovaten from phongban join nhanvien on phongban.trphg = nhanvien.manv;
 câu 16:
-select nhanvien.tennv,nhanvien.dchi from nhanvien join phongban on nhanvien.maphg = (select maphg from phongban where tenphg = 'nguyen cuu');
+select nhanvien.tennv,nhanvien.dchi from nhanvien join phongban on nhanvien.maphg = phongban.maphg where tenphg = 'nguyen cuu';
+câu 17:
+ select dean.tenda , phongban.tenphg , concat(nhanvien.honv,nhanvien.tennv) as HoTen , phongban.ngnhanchuc from nhanvien join phongban on nhanvien.manv = phongban.trphg join dean on phongban.maphg = dean.phong where dean.diadiem_da = 'tp.hcm';
